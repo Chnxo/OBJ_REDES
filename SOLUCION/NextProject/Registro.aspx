@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 class="centrado">
         Registro</h1>
+        <hr class="hr-centrado"/>
     <div class="form-horizontal">
         <div class="span6 offset3">
             <h2>
@@ -46,7 +47,7 @@
             </h2>
             <h2>
                 <div class="controls">
-                    <input class="btn" data-bind="click: RegistrarUsuario" value="Registro"/>                        
+                    <button class="btn btn-custom" data-bind="click: RegistrarUsuario">Registro</button>
                 </div>
             </h2>
         </div>

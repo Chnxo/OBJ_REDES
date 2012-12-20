@@ -64,11 +64,14 @@
     <Content Include="BOOTSTRAP\js\bootstrap-datepicker.js" />
     <Content Include="BOOTSTRAP\js\bootstrap.js" />
     <Content Include="BOOTSTRAP\js\bootstrap.min.js" />
+    <Content Include="CSS\Generales.css" />
     <Content Include="CSS\Master.css" />
     <Content Include="CSS\Menu.css" />
     <Content Include="IMAGES\background.png" />
     <Content Include="IMAGES\banner.png" />
     <Content Include="IMAGES\foot.png" />
+    <Content Include="IMAGES\Index\2.jpg" />
+    <Content Include="IMAGES\Index\4.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="JS\jquery-1.8.2.min.js" />
     <Content Include="JS\Knockout\knockout-2.1.0.js" />

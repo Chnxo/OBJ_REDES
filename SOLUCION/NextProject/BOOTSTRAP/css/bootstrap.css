@@ -5772,3 +5772,30 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+.btn-custom, 
+.btn-custom:hover { 
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); 
+    color: #ffffff; 
+} 
+.btn-custom { 
+	background-color: #FE4902; 
+	background-image: -moz-linear-gradient(top, #C7C3C3, #938C9C); 
+	background-image: -ms-linear-gradient(top, #C7C3C3, #938C9C); 
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C7C3C3), to(#938C9C)); 
+	background-image: -webkit-linear-gradient(top, #C7C3C3, #938C9C); 
+	background-image: -o-linear-gradient(top, #C7C3C3, #938C9C); 
+	background-image: linear-gradient(top, #C7C3C3, #938C9C); 
+	background-repeat: repeat-x; 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C7C3C3', endColorstr='#938C9C', GradientType=0); 
+	border-color: #938C9C #938C9C #000000; 
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); 
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); 
+} 
+.btn-custom:hover, 
+.btn-custom:active, 
+.btn-custom.active, 
+.btn-custom.disabled, 
+.btn-custom[disabled] { 
+	background-color: #938C9C; 
+}

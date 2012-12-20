@@ -6,7 +6,7 @@ body
 .Principal
 {
     max-width: 1000px;
-    min-width: 776px;
+    min-width: 1000px;
     font-family: Calibri;
     height: auto;
     margin-left: auto;
@@ -37,7 +37,17 @@ body
     background-image: url("../IMAGES/foot.png");
     color: white;
 }
-.centrado
+.login
 {
-    text-align: center;
+    margin-top: -17px;
+}
+.login-link
+{
+    font-family: Calibri;
+    font-size: small;
+    color: #fe4902;
+}
+.login-link:hover
+{
+    color: #fe7500;
 }

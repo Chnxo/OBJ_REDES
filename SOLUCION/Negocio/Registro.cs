@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Configuration;
 using System.Net.Mail;
 using System.Text;
 using Datos.Modelos;
 using Datos.Repositorios;
-using Newtonsoft.Json;
-using System.Net;
 using Datos.ViewModels;
+using Newtonsoft.Json;
 
 namespace Negocio
 {
@@ -28,11 +28,6 @@ namespace Negocio
         public static Registro Instancia()
         {
             return registro;
-        }
-
-        public RegistroViewModel ViewModel()
-        {
-            return new RegistroViewModel();
         }
 
         public object RegistrarUsuario(string usuarioJSON)
@@ -60,6 +55,11 @@ namespace Negocio
                 valido = false,
                 mensaje = "Error al registrar usuario."
             });
+        }
+
+        public RegistroViewModel ViewModel()
+        {
+            return new RegistroViewModel();
         }
 
         private bool EnviarCorreo(Tipo tipo, Usuario usu)
@@ -103,7 +103,7 @@ namespace Negocio
             }
             catch (Exception)
             {
-                return false;   
+                return false;
             }
         }
 

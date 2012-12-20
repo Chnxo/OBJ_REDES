@@ -1,4 +1,4 @@
-﻿$('#registro').addClass('current_page_item');
+﻿$('#inicio').addClass('current_page_item');
 var viewModelJS;
 var viewModel;
 

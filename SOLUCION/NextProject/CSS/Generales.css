@@ -1,0 +1,16 @@
+﻿.centrado
+{
+    text-align: center;
+}
+.hr-centrado
+{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.p-formato
+{
+    text-align: justify;
+    margin-left: 5px;
+    margin-right: 5px;
+}
