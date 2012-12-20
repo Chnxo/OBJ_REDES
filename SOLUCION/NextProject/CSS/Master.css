@@ -1,0 +1,43 @@
+body
+{
+    background-image: url("../IMAGES/background.png");
+    background-repeat: repeat-x;
+}
+.Principal
+{
+    max-width: 1000px;
+    min-width: 776px;
+    font-family: Calibri;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Head
+{
+    width: 100%;
+    height: 110px;
+    color: white;
+    background-image: url("../IMAGES/banner.png");
+}
+.SubHead
+{
+    width: 100%;
+}
+.Contenido
+{
+    width: 100%;
+    background-color: white;
+}
+.Foot
+{
+    width: 100%;
+    height: 110px;
+    text-align: center;
+    clear: both;
+    background-image: url("../IMAGES/foot.png");
+    color: white;
+}
+.centrado
+{
+    text-align: center;
+}
