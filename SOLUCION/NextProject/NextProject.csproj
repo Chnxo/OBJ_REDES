@@ -82,7 +82,33 @@
     <Content Include="JS\Menu.js" />
     <Content Include="JS\ViewModels\RegistroViewModel.js" />
     <Content Include="Registro.aspx" />
+    <Content Include="T1_Introduccion.aspx" />
     <Content Include="Temas.aspx" />
+    <Content Include="IMAGES\Temas\back.png" />
+    <Content Include="IMAGES\Temas\Fondo.png" />
+    <Content Include="IMAGES\Temas\Image1197.gif" />
+    <Content Include="IMAGES\Temas\Image1198.gif" />
+    <Content Include="IMAGES\Temas\Image1199.gif" />
+    <Content Include="IMAGES\Temas\Image1200.gif" />
+    <Content Include="IMAGES\Temas\Image1201.gif" />
+    <Content Include="IMAGES\Temas\Image1202.gif" />
+    <Content Include="IMAGES\Temas\Image1203.gif" />
+    <Content Include="IMAGES\Temas\Image1204.gif" />
+    <Content Include="IMAGES\Temas\Image1205.gif" />
+    <Content Include="IMAGES\Temas\Image1206.gif" />
+    <Content Include="IMAGES\Temas\Image1207.gif" />
+    <Content Include="IMAGES\Temas\Image1208.gif" />
+    <Content Include="IMAGES\Temas\Image1209.gif" />
+    <Content Include="IMAGES\Temas\Image1210.gif" />
+    <Content Include="IMAGES\Temas\Image1211.gif" />
+    <Content Include="IMAGES\Temas\Image1212.gif" />
+    <Content Include="IMAGES\Temas\Image1213.gif" />
+    <Content Include="IMAGES\Temas\Image1214.gif" />
+    <Content Include="IMAGES\Temas\T1_I1.gif" />
+    <Content Include="IMAGES\Temas\T1_I2.gif" />
+    <Content Include="IMAGES\Temas\T1_I3.gif" />
+    <Content Include="IMAGES\Temas\Image1218.gif" />
+    <Content Include="IMAGES\Temas\next.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -114,6 +140,13 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="T1_Introduccion.aspx.cs">
+      <DependentUpon>T1_Introduccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T1_Introduccion.aspx.designer.cs">
+      <DependentUpon>T1_Introduccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Temas.aspx.cs">
       <DependentUpon>Temas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,6 +168,7 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
