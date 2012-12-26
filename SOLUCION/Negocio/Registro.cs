@@ -8,15 +8,12 @@ using System.Text;
 using Datos.Modelos;
 using Datos.Repositorios;
 using Datos.ViewModels;
+using Negocio.Helpers;
 using Newtonsoft.Json;
+using NextProject.DATOS;
 
 namespace Negocio
 {
-    public enum Tipo
-    {
-        NuevoUsuario, Recuperacion
-    }
-
     public class Registro
     {
         private static Registro registro = new Registro();
@@ -34,19 +31,20 @@ namespace Negocio
         {
             Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJSON);
             usuario.Password = GenerarPassword();
-            if (UsuariosDAO.Instancia().Agregar(usuario))
+
+            if (UsuarioRepository.Instancia().Agregar(usuario))
             {
-                if (EnviarCorreo(Tipo.NuevoUsuario, usuario))
+                try
                 {
+                    Correo.EnviarCorreo(Tipo.NuevoUsuario, usuario);
                     return (new
                     {
                         valido = true,
                         mensaje = "Registro exitoso, la contraseña ha sido enviada a su correo."
                     });
                 }
-                else
+                catch (Exception)
                 {
-                    UsuariosDAO.Instancia().Eliminar(usuario);
                 }
             }
 
@@ -60,51 +58,6 @@ namespace Negocio
         public RegistroViewModel ViewModel()
         {
             return new RegistroViewModel();
-        }
-
-        private bool EnviarCorreo(Tipo tipo, Usuario usu)
-        {
-            var from = "t4v0.astral@gmail.com";
-            var to = usu.Correo;
-            const string password = "8MQ6pjp4d";
-            string subject = string.Empty;
-            string body = string.Empty;
-
-            switch (tipo)
-            {
-                case Tipo.NuevoUsuario:
-                    subject = "Registro";
-                    body = "Bienvenido " + usu.Nombre + " " + usu.Apellido + "<br/>";
-                    body += "Su contraseña es: " + usu.Password + "<br/><br/>";
-                    body += "Objeto de Aprendizaje Redes";
-                    break;
-
-                case Tipo.Recuperacion:
-                    break;
-
-                default:
-                    break;
-            }
-
-            var smtp = new SmtpClient();
-            {
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(from, password);
-                smtp.Timeout = 20000;
-            }
-
-            try
-            {
-                smtp.Send(from, to, subject, body);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
         }
 
         private string GenerarPassword()

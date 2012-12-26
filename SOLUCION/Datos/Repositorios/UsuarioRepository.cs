@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Datos.Modelos;
-using IMSS_RMN.Datos;
 using NextProject.DATOS;
+using IMSS_RMN.Datos;
 
 namespace Datos.Repositorios
 {
-    public class UsuariosDAO : IRepository<Usuario>
+    public class UsuarioRepository : IRepository<Usuario>
     {
-        private static UsuariosDAO udao = new UsuariosDAO();
+        private static UsuarioRepository usuRepo = new UsuarioRepository();
 
-        private UsuariosDAO()
+        private UsuarioRepository()
         {
+
         }
 
-        public static UsuariosDAO Instancia()
+        public static UsuarioRepository Instancia()
         {
-            return udao;
+            return usuRepo;
         }
 
         #region CRUD
@@ -36,9 +37,10 @@ namespace Datos.Repositorios
                 usuario[5] = entity.Tipo;
 
                 SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_usuario", usuario);
+
                 return true;
             }
-            catch (Exception)
+            catch 
             {
                 return false;
             }
@@ -59,6 +61,6 @@ namespace Datos.Repositorios
             throw new NotImplementedException();
         }
 
-        #endregion CRUD
+        #endregion
     }
 }
