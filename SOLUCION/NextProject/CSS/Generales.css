@@ -21,3 +21,8 @@
     margin-right: 5px;
     font-size: larger;
 }
+
+textarea
+{
+    resize:none;
+}

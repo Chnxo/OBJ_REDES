@@ -82,6 +82,7 @@
     <Content Include="JS\Knockout\knockout.validation.js" />
     <Content Include="JS\Knockout\knockout.validation.min.js" />
     <Content Include="JS\Menu.js" />
+    <Content Include="JS\ViewModels\CrearActividadViewModel.js" />
     <Content Include="JS\ViewModels\RegistroViewModel.js" />
     <Content Include="Registro.aspx" />
     <Content Include="T1_Introduccion.aspx" />
@@ -122,12 +123,14 @@
   <ItemGroup>
     <Compile Include="Actividades.aspx.cs">
       <DependentUpon>Actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Actividades.aspx.designer.cs">
       <DependentUpon>Actividades.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearActividad.aspx.cs">
       <DependentUpon>CrearActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CrearActividad.aspx.designer.cs">
       <DependentUpon>CrearActividad.aspx</DependentUpon>
