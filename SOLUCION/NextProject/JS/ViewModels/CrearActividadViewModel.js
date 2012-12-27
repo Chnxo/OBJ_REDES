@@ -22,6 +22,8 @@ $(function () {
             //viewModel.alertSuccess = ko.observable(false);
             viewModel.TipoActividad = ko.observableArray(['Cuestionario', 'Ejercicio', 'Examen']);
             viewModel.TipoRespuesta = ko.observableArray(['Abierta', 'Falso/Verdadero', "Selección"]);
+            viewModel.AgregandoPregunta = ko.observable(false);
+            viewModel.ActividadLista = ko.observable(false);
 
             ko.applyBindings(viewModel);
         },
@@ -31,3 +33,14 @@ $(function () {
         }
     });
 });
+
+var AgregarPregunta = function () {
+    viewModel.AgregandoPregunta(true);
+    //$(elem).hide().slideDown()
+    viewModel.ActividadLista(false);
+};
+
+var GuardarPregunta = function () {
+    viewModel.AgregandoPregunta(false);
+    viewModel.ActividadLista(true);
+};

@@ -36,14 +36,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="width:5%;">
+                    <td style="width: 5%;">
                         1
                     </td>
-                    <td style="width:88%;">
+                    <td style="width: 88%;">
                         text...
                     </td>
                     <td>
-                        <i class="icon-edit"></i>   <i class="icon-remove"></i>
+                        <i class="icon-edit"></i><i class="icon-remove"></i>
                     </td>
                 </tr>
                 <tr>
@@ -54,7 +54,7 @@
                         text...
                     </td>
                     <td>
-                        <i class="icon-edit"></i>   <i class="icon-remove"></i>
+                        <i class="icon-edit"></i><i class="icon-remove"></i>
                     </td>
                 </tr>
                 <tr>
@@ -65,13 +65,20 @@
                         text...
                     </td>
                     <td>
-                        <i class="icon-edit"></i>   <i class="icon-remove"></i>
+                        <i class="icon-edit"></i><i class="icon-remove"></i>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <h2 class="centrado"><button class="btn"><i class="icon-plus"></i> Agregar Pregunta</button> <button class="btn btn-custom"><i class="icon-ok-sign"></i> Guardar Actividad</button></h2>
+        <h2 class="centrado">
+            <!-- ko if: !AgregandoPregunta() -->
+            <button class="btn" data-bind="click: AgregarPregunta">
+                <i class="icon-plus"></i> Agregar Pregunta</button>
+            <!-- /ko -->
+            <button class="btn btn-custom" data-bind="enable: ActividadLista">
+                <i class="icon-ok-sign"></i> Guardar Actividad</button></h2>
     </div>
+    <!-- ko if: AgregandoPregunta -->
     <div class="form-inline">
         <div class="offset3">
             <h2>
@@ -105,6 +112,10 @@
                 </h2>
             </div>
         </div>
+        <h2 class="centrado">
+        <button class="btn btn-custom" data-bind="click: GuardarPregunta">
+                <i class="icon-ok-sign"></i> Guardar Pregunta</button></h2>
     </div>
+    <!-- /ko -->
     <script src="JS/ViewModels/CrearActividadViewModel.js" type="text/javascript"></script>
 </asp:Content>
