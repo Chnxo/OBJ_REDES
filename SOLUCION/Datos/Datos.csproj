@@ -41,8 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
+    <Compile Include="Modelos\Actividad.cs" />
+    <Compile Include="Modelos\Pregunta.cs" />
+    <Compile Include="Modelos\Respuesta.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\ActividadRepository.cs" />
+    <Compile Include="Repositorios\PreguntaRepository.cs" />
+    <Compile Include="Repositorios\RespuestaRepository.cs" />
     <Compile Include="Repositorios\UsuarioRepository.cs" />
     <Compile Include="SQLHelper.cs" />
     <Compile Include="ViewModels\RegistroViewModel.cs" />

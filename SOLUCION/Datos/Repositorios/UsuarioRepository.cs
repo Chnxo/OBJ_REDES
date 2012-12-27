@@ -62,5 +62,11 @@ namespace Datos.Repositorios
         }
 
         #endregion
+
+
+        public int Agregar_RegresandoPK(Usuario entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,6 +9,8 @@ namespace NextProject.DATOS
     {
         bool Agregar(T entity);
 
+        int Agregar_RegresandoPK(T entity);
+
         bool Eliminar(T entity);
 
         bool Modificar(T entity);

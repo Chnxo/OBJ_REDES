@@ -54,6 +54,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Actividades.aspx" />
     <Content Include="BOOTSTRAP\css\bootstrap-responsive.css" />
     <Content Include="BOOTSTRAP\css\bootstrap-responsive.min.css" />
     <Content Include="BOOTSTRAP\css\bootstrap.css" />
@@ -64,6 +65,7 @@
     <Content Include="BOOTSTRAP\js\bootstrap-datepicker.js" />
     <Content Include="BOOTSTRAP\js\bootstrap.js" />
     <Content Include="BOOTSTRAP\js\bootstrap.min.js" />
+    <Content Include="CrearActividad.aspx" />
     <Content Include="CSS\Generales.css" />
     <Content Include="CSS\Master.css" />
     <Content Include="CSS\Menu.css" />
@@ -118,6 +120,18 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividades.aspx.cs">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Actividades.aspx.designer.cs">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearActividad.aspx.cs">
+      <DependentUpon>CrearActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearActividad.aspx.designer.cs">
+      <DependentUpon>CrearActividad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

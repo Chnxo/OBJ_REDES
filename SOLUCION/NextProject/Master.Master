@@ -59,6 +59,7 @@
                             <li id="inicio"><a href="Index.aspx">Inicio</a></li>
                             <li id="temas"><a href="Temas.aspx">Temas</a></li>
                             <li id="ejercicios"><a href="#">Ejercicios</a></li>
+                            <li id="actividades"><a href="Actividades.aspx">Actividades</a></li>
                         </ul>
                     </div>
                 </div>
