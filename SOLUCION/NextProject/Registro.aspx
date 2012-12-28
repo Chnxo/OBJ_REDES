@@ -34,7 +34,7 @@
                 <label class="control-label">
                     Fecha de Nacimiento</label>
                 <div class="controls">
-                    <input type="text" data-bind="value: Usuario.FechaNacimiento"/>
+                    <input type="text" data-bind="value: Usuario.Fecha_Nacimiento"/>
                 </div>
             </h2>
             <h2>

@@ -13,7 +13,8 @@ namespace NextProject
         [WebMethod]
         public static object CargarViewModel()
         {
-            return Negocio.CrearActividad.Instancia().ViewModel();
+            //return Negocio.CrearActividad.Instancia().ViewModel();
+            return Logica.CrearActividad.GetViewModel();
         }
 
         protected void Page_Load(object sender, EventArgs e)

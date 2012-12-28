@@ -13,13 +13,15 @@ namespace NextProject
         [WebMethod]
         public static object CargarViewModel()
         {
-            return Negocio.Registro.Instancia().ViewModel();
+            //return Negocio.Registro.Instancia().ViewModel();
+            return Logica.Registro.GetViewModel();
         }
 
         [WebMethod]
         public static object RegistrarUsuario(string usuarioJSON)
         {
-            return Negocio.Registro.Instancia().RegistrarUsuario(usuarioJSON);
+            //return Negocio.Registro.Instancia().RegistrarUsuario(usuarioJSON);
+            return Logica.Registro.RegistrarUsuario(usuarioJSON);
         }
 
         protected void Page_Load(object sender, EventArgs e)

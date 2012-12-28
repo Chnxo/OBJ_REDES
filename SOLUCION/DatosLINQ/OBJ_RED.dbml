@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OBJ_REDES" Class="OBJ_REDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=pse020\sqlexpress;Initial Catalog=OBJ_REDES;Integrated Security=True" SettingsObjectName="DatosLINQ.Properties.Settings" SettingsPropertyName="OBJ_REDESConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Actividades" Member="Actividades">
+    <Type Name="Actividade">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Actividade_Det_Actividad_Usuario" Member="Det_Actividad_Usuarios" ThisKey="ID" OtherKey="FK_Actividad" Type="Det_Actividad_Usuario" />
+      <Association Name="Actividade_Pregunta" Member="Preguntas" ThisKey="ID" OtherKey="FK_Actividad" Type="Pregunta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Det_Actividad_Usuario" Member="Det_Actividad_Usuarios">
+    <Type Name="Det_Actividad_Usuario">
+      <Column Name="FK_Actividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Creador" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Calificacion" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Fecha_Realizacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Actividade_Det_Actividad_Usuario" Member="Actividade" ThisKey="FK_Actividad" OtherKey="ID" Type="Actividade" IsForeignKey="true" />
+      <Association Name="Usuario_Det_Actividad_Usuario" Member="Usuario" ThisKey="FK_Usuario" OtherKey="ID" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Preguntas" Member="Preguntas">
+    <Type Name="Pregunta">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reactivo" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FK_Actividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Pregunta_Respuesta" Member="Respuestas" ThisKey="ID" OtherKey="FK_Pregunta" Type="Respuesta" />
+      <Association Name="Actividade_Pregunta" Member="Actividade" ThisKey="FK_Actividad" OtherKey="ID" Type="Actividade" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Respuestas" Member="Respuestas">
+    <Type Name="Respuesta">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Respuesta" Member="Respuesta1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FK_Pregunta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Pregunta_Respuesta" Member="Pregunta" ThisKey="FK_Pregunta" OtherKey="ID" Type="Pregunta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuarios" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_Nacimiento" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Usuario_Det_Actividad_Usuario" Member="Det_Actividad_Usuarios" ThisKey="ID" OtherKey="FK_Usuario" Type="Det_Actividad_Usuario" />
+    </Type>
+  </Table>
+</Database>

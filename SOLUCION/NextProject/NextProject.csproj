@@ -176,9 +176,17 @@
     <Content Include="Master.Master" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatosLINQ\DatosLINQ.csproj">
+      <Project>{F09A1B23-2B6E-47BC-A769-E469EF68E0C6}</Project>
+      <Name>DatosLINQ</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{261C777B-EAFE-47BA-8EA6-98E987437D84}</Project>
       <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{9371F184-3AD2-4E72-8EE7-413107A1ACD9}</Project>
+      <Name>Logica</Name>
     </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{9B26A87F-77A8-4F95-A4C5-50C16B50551E}</Project>
