@@ -73,10 +73,10 @@
         <h2 class="centrado">
             <!-- ko if: !AgregandoPregunta() -->
             <button class="btn" data-bind="click: AgregarPregunta">
-                <i class="icon-plus"></i> Agregar Pregunta</button>
+                <i class="icon-plus"></i>&nbsp;Agregar Pregunta</button>
             <!-- /ko -->
             <button class="btn btn-custom" data-bind="enable: ActividadLista">
-                <i class="icon-ok-sign"></i> Guardar Actividad</button></h2>
+                <i class="icon-ok-sign"></i>&nbsp;Guardar Actividad</button></h2>
     </div>
     <!-- ko if: AgregandoPregunta -->
     <div class="form-inline">
@@ -95,12 +95,13 @@
                     <label class="control-label">
                         Tipo Respuesta</label>
                     <div class="controls">
-                        <select data-bind="options: TipoRespuesta, optionsCaption: 'Selecciona un Tipo...'">
+                        <select data-bind="options: TipoRespuesta, selectedOptions: trSeleccionada, optionsCaption: 'Selecciona un Tipo...'">
                         </select>
                     </div>
                 </h2>
             </div>
         </div>
+        <!-- ko if: trSeleccionada() == 'Abierta' -->
         <div class="form-inline">
             <div class="offset3">
                 <h2>
@@ -112,9 +113,40 @@
                 </h2>
             </div>
         </div>
+        <!-- /ko -->
+        <!-- ko if: trSeleccionada() == 'Falso/Verdadero' -->
+        <div class="form-inline">
+            <h2>
+                <p style="font-size: large;" class="centrado">
+                    Verdadero
+                    <input type="radio" name="respuesta" value="true" />
+                    Falso
+                    <input type="radio" name="respuesta" value="false" /></p>
+            </h2>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: trSeleccionada() == 'Selección' -->
+        <div class="form-inline">
+            <div class="offset3">
+                <h2>
+                    <label class="control-label">
+                        Respuesta | ¿Es correcta?
+                        <input type="checkbox" value="true" />
+                    </label>
+                    <div class="controls">
+                        <textarea rows="1" class="input-xxlarge"></textarea>
+                    </div>
+                </h2>
+            </div>
+            <h2 class="centrado">
+                <button class="btn">
+                    <i class="icon-plus"></i>&nbsp;Agregar Respuesta</button>
+            </h2>
+        </div>
+        <!-- /ko -->
         <h2 class="centrado">
-        <button class="btn btn-custom" data-bind="click: GuardarPregunta">
-                <i class="icon-ok-sign"></i> Guardar Pregunta</button></h2>
+            <button class="btn btn-custom" data-bind="click: GuardarPregunta">
+                <i class="icon-ok-sign"></i>&nbsp;Guardar Pregunta</button></h2>
     </div>
     <!-- /ko -->
     <script src="JS/ViewModels/CrearActividadViewModel.js" type="text/javascript"></script>

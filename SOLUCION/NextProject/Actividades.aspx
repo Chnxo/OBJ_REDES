@@ -3,4 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <a href="CrearActividad.aspx">Nueva Actividad</a>
+    <script type="text/javascript">
+        $('#actividades').addClass('current_page_item');
+    </script>
 </asp:Content>

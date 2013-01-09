@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using DatosLINQ;
@@ -11,12 +12,32 @@ namespace Logica
 {
     public class CrearActividad
     {
-        public static object AgregarActividad(string actividadJSON)
+        public static object AgregarActividad(string actividadJSON, string preguntasJSON, string respuestasJSON)
         {
+            Actividade actividad = JsonConvert.DeserializeObject<Actividade>(actividadJSON);
+            List<Pregunta> preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(preguntasJSON);
+            List<Respuesta> respuestas = JsonConvert.DeserializeObject<List<Respuesta>>(respuestasJSON);
+
+            foreach (Pregunta p in preguntas)
+            {
+                foreach (Respuesta r in respuestas)
+                {
+                    if (p.ID == r.FK_Pregunta)
+                    {
+                        p.Respuestas.Add(r);
+                    }
+                }
+            }
+
+            //Converting List to EntitySet
+            var preguntasEntitySet = new EntitySet<Pregunta>();
+            preguntasEntitySet.AddRange(preguntas);
+
+            actividad.Preguntas = preguntasEntitySet;
+
             using (var dataContext = new OBJ_REDDataContext())
             {
                 var actRepo = new Repository<Actividade>(dataContext);
-                Actividade actividad = JsonConvert.DeserializeObject<Actividade>(actividadJSON);
                 try
                 {
                     actRepo.Insert(actividad);

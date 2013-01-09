@@ -1,7 +1,8 @@
 body
 {
-    background-image: url("../IMAGES/background.png");
+    background-image: url("../IMAGES/background-whitesmoke.png");
     background-repeat: repeat-x;
+    background-color: WhiteSmoke;
 }
 .Principal
 {

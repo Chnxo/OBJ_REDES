@@ -22,6 +22,8 @@ $(function () {
             //viewModel.alertSuccess = ko.observable(false);
             viewModel.TipoActividad = ko.observableArray(['Cuestionario', 'Ejercicio', 'Examen']);
             viewModel.TipoRespuesta = ko.observableArray(['Abierta', 'Falso/Verdadero', "Selección"]);
+            viewModel.trSeleccionada = ko.observable();
+            //viewModel.SeleccionRespuestas = ko.observableArray();
             viewModel.AgregandoPregunta = ko.observable(false);
             viewModel.ActividadLista = ko.observable(false);
 

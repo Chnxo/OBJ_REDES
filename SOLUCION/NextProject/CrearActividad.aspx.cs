@@ -13,8 +13,13 @@ namespace NextProject
         [WebMethod]
         public static object CargarViewModel()
         {
-            //return Negocio.CrearActividad.Instancia().ViewModel();
             return Logica.CrearActividad.GetViewModel();
+        }
+
+        [WebMethod]
+        public static object GuardarActividad(string actividadJSON, string preguntasJSON, string respuestasJSON)
+        {
+            return Logica.CrearActividad.AgregarActividad(actividadJSON, preguntasJSON, respuestasJSON);
         }
 
         protected void Page_Load(object sender, EventArgs e)

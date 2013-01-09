@@ -11,7 +11,9 @@ namespace Logica.ViewModels
         public CrearActividadViewModel()
         {
             Actividad = new Actividade();
+            SeleccionRespuestas = new List<Respuesta>();
         }
         public Actividade Actividad { get; set; }
+        public List<Respuesta> SeleccionRespuestas { get; set; }
     }
 }
